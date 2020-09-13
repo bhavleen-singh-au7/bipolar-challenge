@@ -1,7 +1,12 @@
-import React from "react";
+import React, { Fragment } from "react";
+import Main from "./container/Main";
 
 function App() {
-  return <div>Hey</div>;
+  return (
+    <Fragment>
+      <Main />
+    </Fragment>
+  );
 }
 
 export default App;
