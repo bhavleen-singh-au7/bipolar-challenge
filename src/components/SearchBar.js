@@ -1,16 +1,38 @@
-import React from "react";
+import React, { useState } from "react";
 
-const SearchBar = () => {
+const SearchBar = ({ getQuery }) => {
+  const [value, setValue] = useState("");
+
+  const handleClick = (e, q) => {
+    e.preventDefault();
+    setValue(q);
+    getQuery(q);
+  };
+
   return (
-    <div className="container w-50">
-      <form className="form-inline m-auto text-center rounded shadows">
-        <i className="fas fa-search text_color_teal ml-5"></i>
-        <input
-          className="form-control ml-3 border-0 pr-5 w-75"
-          type="text"
-          placeholder="Search Photos"
-          autoFocus
-        />
+    <div
+      className="container z-depth-1 teal"
+      style={{ width: "35%", position: "relative" }}
+    >
+      <div className="h-center teal-text text-darken-3">
+        <i className="fas fa-search"></i>
+      </div>
+      <form onSubmit={handleClick}>
+        <div className="row">
+          <div className="input-field col s11 right">
+            <input
+              id="search_box"
+              type="text"
+              className="validate"
+              autoComplete="off"
+              value={value}
+              onChange={(e) => setValue(e.target.value)}
+            />
+            <label htmlFor="search_box">
+              Search Photos
+            </label>
+          </div>
+        </div>
       </form>
     </div>
   );

@@ -20,16 +20,40 @@ body {
   font-weight: 400;
 }
 
-.text_color_teal {
-  color: #008080;
+.bold {
+  font-weight: bold;
+}
+
+.mb-4 {
+  margin-bottom: 40px;
+}
+
+.mr-3 {
+  margin-right: 30px;
+}
+
+.my-3 {
+  margin: 30px;
+}
+
+.h-center {
+  position: absolute;
+  top: 35%;
+  left: 3%;
+  font-size: 20px;
 }
 
 .form-control:focus {
   box-shadow: inset 0 -1px 0 #ddd;
 }
 
-.shadows {
-  -webkit-box-shadow: 1px 6px 7px -4px rgba(176,176,176,1);
--moz-box-shadow: 1px 6px 7px -4px rgba(176,176,176,1);
-box-shadow: 1px 6px 7px -4px rgba(176,176,176,1);
+.rounded {
+  border-radius: 10px;
+}
+
+.centered {
+  display: flex;
+  justify-content: center;
+  padding-top: 50px;
+  padding-bottom: 50px;
 }
