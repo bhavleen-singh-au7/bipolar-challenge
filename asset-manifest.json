@@ -1,0 +1,23 @@
+{
+  "files": {
+    "main.css": "/bipolar-challenge/static/css/main.f55ac132.chunk.css",
+    "main.js": "/bipolar-challenge/static/js/main.60e5879a.chunk.js",
+    "main.js.map": "/bipolar-challenge/static/js/main.60e5879a.chunk.js.map",
+    "runtime-main.js": "/bipolar-challenge/static/js/runtime-main.6b888c26.js",
+    "runtime-main.js.map": "/bipolar-challenge/static/js/runtime-main.6b888c26.js.map",
+    "static/js/2.9cb2044c.chunk.js": "/bipolar-challenge/static/js/2.9cb2044c.chunk.js",
+    "static/js/2.9cb2044c.chunk.js.map": "/bipolar-challenge/static/js/2.9cb2044c.chunk.js.map",
+    "index.html": "/bipolar-challenge/index.html",
+    "precache-manifest.4ab2bab10806a7c9fbd5e574c2df1976.js": "/bipolar-challenge/precache-manifest.4ab2bab10806a7c9fbd5e574c2df1976.js",
+    "service-worker.js": "/bipolar-challenge/service-worker.js",
+    "static/css/main.f55ac132.chunk.css.map": "/bipolar-challenge/static/css/main.f55ac132.chunk.css.map",
+    "static/js/2.9cb2044c.chunk.js.LICENSE.txt": "/bipolar-challenge/static/js/2.9cb2044c.chunk.js.LICENSE.txt",
+    "static/media/loader.gif": "/bipolar-challenge/static/media/loader.c987ff1f.gif"
+  },
+  "entrypoints": [
+    "static/js/runtime-main.6b888c26.js",
+    "static/js/2.9cb2044c.chunk.js",
+    "static/css/main.f55ac132.chunk.css",
+    "static/js/main.60e5879a.chunk.js"
+  ]
+}
