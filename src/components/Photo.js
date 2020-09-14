@@ -1,7 +1,6 @@
 import React, { useEffect } from "react";
-// import ImJi from "../img/MyPic.jpg";
 
-const Photo = ({ item }) => {
+const Photo = ({ item, key }) => {
   useEffect((options) => {
     const M = window.M;
     var elems = document.querySelectorAll(".materialboxed");
@@ -9,15 +8,13 @@ const Photo = ({ item }) => {
   }, []);
 
   return (
-    <div style={{ textAlign: "center" }}>
-      <img
-        src={item}
-        alt="myImg"
-        width="300px"
-        height="400px"
-        className="materialboxed my-3 z-depth-3 rounded"
-      />
-    </div>
+    <img
+      src={item}
+      key={key}
+      alt="myImg"
+      width="250px"
+      className="materialboxed my-3 z-depth-3 rounded"
+    />
   );
 };
 
