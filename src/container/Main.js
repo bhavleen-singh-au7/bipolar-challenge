@@ -5,39 +5,38 @@ import axios from "axios";
 import PhotoGrid from "../components/PhotoGrid";
 import InfiniteScroll from "react-infinite-scroll-component";
 import Spinner from "../components/Spinner";
-// import { getImages } from "../API";
 
 const Main = () => {
-  // const [page, setPage] = useState(1);
   const [items, setItems] = useState([]);
   const [isLoading, setIsLoading] = useState("");
-  const [value, setValue] = useState("");
+  const [query, setQuery] = useState("");
 
   useEffect(() => {
     fetchItems();
-  }, []);
+  }, [query]);
 
   const fetchItems = () => {
     const fetchedData = async () => {
       const API = "https://api.unsplash.com";
       const accessKey = process.env.REACT_APP_ACCESS_KEY;
 
-      console.log(err);
-      const result = await axios(
-        `${API}/photos/random?client_id=${accessKey}&count=12&orientation=squarish`
-      );
-      
-      // if (value) {
-      //   result = await axios(
-      //     `${API}/search/photos?client_id=${accessKey}&query=${value}&per_page=12&orientation=squarish`
-      //   );
-      // } else {
-      //   result = await axios(
-      //     `${API}/photos/random?client_id=${accessKey}&count=12&orientation=squarish`
-      //   );
-      // }
+      console.log("->", query);
 
-      setItems([...items, ...result.data]);
+      console.log(err);
+      var result;
+      if (query) {
+        console.log("not executed");
+        result = await axios(
+          `${API}/search/photos?client_id=${accessKey}&query=${query}&per_page=12&orientation=squarish`
+        );
+        setItems([...items, ...result.data.results]);
+      } else {
+        result = await axios(
+          `${API}/photos/random?client_id=${accessKey}&count=12&orientation=squarish`
+        );
+        setItems([...items, ...result.data]);
+      }
+
       setIsLoading(false);
     };
     fetchedData();
@@ -46,7 +45,7 @@ const Main = () => {
   return (
     <div>
       <Navbar />
-      <SearchBar />
+      <SearchBar getQuery={(q) => setQuery(q)} />
       <InfiniteScroll
         dataLength={items.length}
         next={fetchItems}

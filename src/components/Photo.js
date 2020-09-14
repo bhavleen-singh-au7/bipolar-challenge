@@ -13,6 +13,7 @@ const Photo = ({ item, key }) => {
       key={key}
       alt="myImg"
       width="250px"
+      height="250px"
       className="materialboxed my-3 z-depth-3 rounded"
     />
   );
