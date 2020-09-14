@@ -11,6 +11,7 @@ const Main = () => {
   // const [page, setPage] = useState(1);
   const [items, setItems] = useState([]);
   const [isLoading, setIsLoading] = useState("");
+  const [value, setValue] = useState("");
 
   useEffect(() => {
     fetchItems();
@@ -21,10 +22,20 @@ const Main = () => {
       const API = "https://api.unsplash.com";
       const accessKey = process.env.REACT_APP_ACCESS_KEY;
 
-      // // console.log(err);
+      console.log(err);
       const result = await axios(
         `${API}/photos/random?client_id=${accessKey}&count=12&orientation=squarish`
       );
+      
+      // if (value) {
+      //   result = await axios(
+      //     `${API}/search/photos?client_id=${accessKey}&query=${value}&per_page=12&orientation=squarish`
+      //   );
+      // } else {
+      //   result = await axios(
+      //     `${API}/photos/random?client_id=${accessKey}&count=12&orientation=squarish`
+      //   );
+      // }
 
       setItems([...items, ...result.data]);
       setIsLoading(false);
@@ -35,7 +46,7 @@ const Main = () => {
   return (
     <div>
       <Navbar />
-      <SearchBar getQuery={(q) => setQuery(q)} />
+      <SearchBar />
       <InfiniteScroll
         dataLength={items.length}
         next={fetchItems}
