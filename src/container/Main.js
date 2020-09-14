@@ -22,7 +22,7 @@ const Main = () => {
 
       console.log("->", query);
 
-      console.log(err);
+      // console.log(err);
       var result;
       if (query) {
         console.log("not executed");

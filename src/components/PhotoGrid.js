@@ -10,11 +10,8 @@ const PhotoGrid = ({ items, isLoading }) => {
       <div className="row">
         {items &&
           items.map((item) => (
-            <div className="col s12 m6 l3">
-              <Photo
-                key={item.id}
-                item={item.urls.regular}
-              />
+            <div className="col s12 m6 l3" key={item.id}>
+              <Photo item={item.urls.regular} />
             </div>
           ))}
       </div>
